@@ -1,0 +1,21 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.right-margin-6 {
+    margin-right: 6px;
+}
+
+.font-size-24px {
+    font-size: 24px;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.mr-auto {
+    margin-right: auto;
+}
