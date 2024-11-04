@@ -1,0 +1,17 @@
+{
+  "article_dir": "/articles",
+  "articles": [
+    {
+      "name": "Introduction",
+      "file": "introduction.md"
+    },
+    {
+      "name": "1",
+      "file": "1.md"
+    },
+    {
+      "name": "2",
+      "file": "2.md"
+    }
+  ]
+}

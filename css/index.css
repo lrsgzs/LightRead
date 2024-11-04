@@ -1,7 +1,16 @@
+@font-face {
+    font-family: "web-font";
+    src: url("/assets/font.ttf");
+}
+
 html,
 body {
     height: 100%;
     margin: 0;
+}
+
+.left-margin-6 {
+    margin-left: 6px;
 }
 
 .right-margin-6 {
@@ -18,4 +27,19 @@ body {
 
 .mr-auto {
     margin-right: auto;
+}
+
+.mlr-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.display-inline
+{
+    display: inline;
+}
+
+.content-container {
+    padding-bottom: 66px;
+    font-family: web-font, system-ui;
 }
