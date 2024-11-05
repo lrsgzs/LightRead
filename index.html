@@ -5,7 +5,7 @@
     <title>LightRead</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/index.css">
 </head>
 
@@ -13,6 +13,8 @@
     <nav class="navbar bg-body-tertiary sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand">LightRead</a>
+            <!-- For different design  it will be changed -->
+            <div class="ml-auto">Article 10</div>
             <div class="ml-auto">
                 <ul class="nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -21,7 +23,8 @@
                     <li class="nav-item">
                         <button class="btn btn-light right-margin-6">Aa</button>
                     </li>
-                    <li class="ml-auto nav-item">
+                    <li class="ml-auto nav-item visually-hidden">
+                        <!-- For different design  it will be changed -->
                         <div class="input-group">
                             <button class="btn btn-outline-secondary" type="button">←Prev</button>
                             <input type="number" class="form-control" placeholder="Article 1~9999" value="10"
@@ -34,23 +37,22 @@
         </div>
     </nav>
 
-    <div class="content-container">
-        
-    </div>
+    <div class="content-container" id="container"></div>
 
     <nav class="navbar bg-body-tertiary fixed-bottom">
         <div class="container-fluid">
             <div class="mr-auto">
                 <button class="btn btn-light">←Prev <div class="font-size-24px display-inline">1</div></button>
             </div>
-            <div class="font-size-24px">10:10</div>
+            <div class="font-size-24px" id="time-container">10:10</div>
             <div class="ml-auto">
                 <button class="btn btn-light"><div class="font-size-24px display-inline">3</div> Next→</button>
             </div>
         </div>
     </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://fastly.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/js/index.js"></script>
 </body>
 
 </html>
