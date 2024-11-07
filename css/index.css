@@ -9,12 +9,16 @@ body {
     margin: 0;
 }
 
-.left-margin-6 {
+.left-margin-6px {
     margin-left: 6px;
 }
 
-.right-margin-6 {
+.right-margin-6px {
     margin-right: 6px;
+}
+
+.font-size-20px {
+    font-size: 20px;
 }
 
 .font-size-24px {
@@ -34,12 +38,45 @@ body {
     margin-right: auto;
 }
 
-.display-inline
-{
+.display-inline {
     display: inline;
 }
 
+.display-flex {
+    display: flex;
+}
+
 .content-container {
+    padding: 20px;
     padding-bottom: 66px;
     font-family: web-font, system-ui;
+}
+
+code {
+    border-radius: 10px;
+}
+
+mjx-container {
+    text-align: unset !important;
+    margin-left: 0 !important;
+}
+
+blockquote {
+    border-left: 5px solid gainsboro;
+    padding-left: 5px;
+}
+
+img {
+    vertical-align: bottom;
+    max-width: 100%;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border: 2px solid gray;
+    padding: 5px;
+}
+
+.language-tag {
+    line-height: 31px;
+    font-family: monospace;
 }

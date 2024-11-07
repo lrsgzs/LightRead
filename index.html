@@ -1,36 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html data-bs-theme="light">
 
 <head>
     <title>LightRead</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fastly.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/stackoverflow-dark.min.css">
     <link rel="stylesheet" href="/css/index.css">
 </head>
 
 <body>
     <nav class="navbar bg-body-tertiary sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand">LightRead</a>
-            <!-- For different design  it will be changed -->
-            <div class="ml-auto">Article 10</div>
+            <a class="navbar-brand" id="book-title">LightRead</a>
+            <div class="ml-auto font-size-24px" id="article-title">Article 10</div>
             <div class="ml-auto">
                 <ul class="nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <button class="btn btn-light right-margin-6">☀</button>
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-light right-margin-6px dropdown-toggle" id="switch-theme-btn"
+                            data-bs-toggle="dropdown" aria-expanded="false">☀</button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <input type="radio" name="theme-option" id="theme-option1" autocomplete="off"
+                                    class="btn-check" onclick="App.switch_theme('auto')" checked></input>
+                                <label class="btn btn-light dropdown-item" for="theme-option1">Auto</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="theme-option" id="theme-option2" autocomplete="off"
+                                    class="btn-check" onclick="App.switch_theme('light')"></input>
+                                <label class="btn btn-light dropdown-item" for="theme-option2">Light</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="theme-option" id="theme-option3" autocomplete="off"
+                                    class="btn-check" onclick="App.switch_theme('dark')"></input>
+                                <label class="btn btn-light dropdown-item" for="theme-option3">Dark</label>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <button class="btn btn-light right-margin-6">Aa</button>
-                    </li>
-                    <li class="ml-auto nav-item visually-hidden">
-                        <!-- For different design  it will be changed -->
-                        <div class="input-group">
-                            <button class="btn btn-outline-secondary" type="button">←Prev</button>
-                            <input type="number" class="form-control" placeholder="Article 1~9999" value="10"
-                                style="width: 150px;">
-                            <button class="btn btn-outline-secondary" type="button">Next→</button>
-                        </div>
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-light right-margin-6px dropdown-toggle" id="switch-zoom-btn"
+                            data-bs-toggle="dropdown" aria-expanded="false">Aa</button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <input type="radio" name="zoom-option" id="zoom-option1" autocomplete="off"
+                                    class="btn-check" onclick="App.switch_zoom(0.9)"></input>
+                                <label class="btn btn-light dropdown-item" for="zoom-option1">90%</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="zoom-option" id="zoom-option2" autocomplete="off"
+                                    class="btn-check" onclick="App.switch_zoom(1)" checked></input>
+                                <label class="btn btn-light dropdown-item" for="zoom-option2">100%</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="zoom-option" id="zoom-option3" autocomplete="off"
+                                    class="btn-check" onclick="App.switch_zoom(1.1)"></input>
+                                <label class="btn btn-light dropdown-item" for="zoom-option3">110%</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="zoom-option" id="zoom-option4" autocomplete="off"
+                                    class="btn-check" onclick="App.switch_zoom(1.5)"></input>
+                                <label class="btn btn-light dropdown-item" for="zoom-option4">150%</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="zoom-option" id="zoom-option5" autocomplete="off"
+                                    class="btn-check" onclick="App.switch_zoom(2)"></input>
+                                <label class="btn btn-light dropdown-item" for="zoom-option5">200%</label>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -42,16 +80,21 @@
     <nav class="navbar bg-body-tertiary fixed-bottom">
         <div class="container-fluid">
             <div class="mr-auto">
-                <button class="btn btn-light">←Prev <div class="font-size-24px display-inline">1</div></button>
+                <button class="btn btn-light" id="prev-btn">
+                    ←Prev <div class="font-size-24px display-inline">1</div>
+                </button>
             </div>
             <div class="font-size-24px" id="time-container">10:10</div>
             <div class="ml-auto">
-                <button class="btn btn-light"><div class="font-size-24px display-inline">3</div> Next→</button>
+                <button class="btn btn-light" id="next-btn">
+                    <div class="font-size-24px display-inline">3</div> Next→
+                </button>
             </div>
         </div>
     </nav>
 
     <script src="https://fastly.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="module" src="/js/index.js"></script>
 </body>
 
