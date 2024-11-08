@@ -1,5 +1,6 @@
 import { marked } from "https://fastly.jsdelivr.net/npm/marked/lib/marked.esm.js";
 import hljs from "https://fastly.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/es/highlight.min.js";
+import { lineNumbersBlock } from "./hightlight-line-number.js";
 import DOMPurify from "https://fastly.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.es.mjs";
 import article from "./articles.js";
 
@@ -25,6 +26,7 @@ const load_article = async index => {
         if (codeBlock.parentElement.tagName !== "PRE") {
             return;
         }
+        lineNumbersBlock(codeBlock);
 
         let btn_container = document.createElement("div");
         btn_container.className = "display-flex";
