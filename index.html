@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html data-bs-theme="light">
+<html lang="en" data-bs-theme="light">
 
 <head>
     <title>LightRead</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="description" content="LightRead">
+    <link rel="shortcut icon" href="/assets/favicon.png">
+
     <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fastly.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/stackoverflow-dark.min.css">
@@ -79,12 +83,12 @@
 
     <nav class="navbar bg-body-tertiary fixed-bottom">
         <div class="container-fluid">
-            <button class="btn btn-light" id="prev-btn" onclick="App.switch_article(-1)">
+            <button class="btn btn-light ml-auto" id="prev-btn" onclick="App.switch_article(-1)">
                 ←Prev
                 <div class="font-size-24px display-inline" id="prev-btn-num">1</div>
             </button>
-            <div class="font-size-24px mlr-auto" id="time-container">10:10</div>
-            <button class="btn btn-light" id="next-btn" onclick="App.switch_article(1)">
+            <div class="mlr-auto font-size-24px" id="time-container">10:10</div>
+            <button class="btn btn-light mr-auto" id="next-btn" onclick="App.switch_article(1)">
                 <div class="font-size-24px display-inline" id="next-btn-num">3</div>
                 Next→
             </button>
@@ -92,8 +96,8 @@
     </nav>
 
     <script src="https://fastly.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="module" src="/js/index.js"></script>
+    <script defer src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script defer type="module" src="/js/index.js"></script>
 </body>
 
 </html>

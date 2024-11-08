@@ -39,7 +39,7 @@ const load_article = async index => {
         btn_container.appendChild(language_tag);
 
         let copyButton = document.createElement("button");
-        copyButton.className = "btn btn-sm btn-outline-secondary";
+        copyButton.className = "btn btn-sm btn-secondary";
         copyButton.innerText = "Copy code";
         btn_container.appendChild(copyButton);
 
@@ -65,18 +65,18 @@ const load_article = async index => {
     const prev_btn = document.getElementById("prev-btn");
     const prev_btn_num = document.getElementById("prev-btn-num");
     if (index === 0) {
-        prev_btn.className = "mr-auto btn btn-light visually-hidden";
+        prev_btn.className = "btn btn-light visually-hidden";
     } else {
-        prev_btn.className = "mr-auto btn btn-light";
+        prev_btn.className = "btn btn-light";
         prev_btn_num.innerHTML = articles[index - 1];
     }
 
     const next_btn = document.getElementById("next-btn");
     const next_btn_num = document.getElementById("next-btn-num");
     if (index === articles_count - 1) {
-        next_btn.className = "ml-auto btn btn-light visually-hidden";
+        next_btn.className = "btn btn-light visually-hidden";
     } else {
-        next_btn.className = "ml-auto btn btn-light";
+        next_btn.className = "btn btn-light";
         next_btn_num.innerHTML = articles[index + 1];
     }
 };

@@ -1,6 +1,7 @@
 @font-face {
     font-family: "web-font";
     src: url("/assets/font.ttf");
+    font-display: fallback;
 }
 
 html,
