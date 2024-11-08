@@ -71,7 +71,12 @@ img {
     max-width: 100%;
 }
 
-tbody, td, tfoot, th, thead, tr {
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
     border: 2px solid gray;
     padding: 5px;
 }
@@ -79,4 +84,36 @@ tbody, td, tfoot, th, thead, tr {
 .language-tag {
     line-height: 31px;
     font-family: monospace;
+}
+
+@media (prefers-color-scheme: light) {
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: #555;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #aaa;
+    }
 }
