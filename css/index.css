@@ -52,10 +52,6 @@ body {
     font-family: web-font, system-ui;
 }
 
-code {
-    border-radius: 10px;
-}
-
 mjx-container {
     text-align: unset !important;
     margin-left: 0 !important;
@@ -81,9 +77,22 @@ tr {
     padding: 5px;
 }
 
+code {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.code-block-head {
+    padding: 5px 5px 5px 10px;
+    background-color: #4d4d4d;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
 .language-tag {
     line-height: 31px;
     font-family: monospace;
+    color: white;
 }
 
 .hljs-ln,

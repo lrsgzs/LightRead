@@ -27,10 +27,12 @@ const load_article = async index => {
         if (codeBlock.parentElement.tagName !== "PRE") {
             return;
         }
-        lineNumbersBlock(codeBlock);
 
+        const code = codeBlock.innerText.trim();
+        lineNumbersBlock(codeBlock);
+        
         let btn_container = document.createElement("div");
-        btn_container.className = "display-flex";
+        btn_container.className = "code-block-head display-flex";
 
         let language_tag = document.createElement("span");
         language_tag.className = "language-tag mr-auto";
@@ -44,10 +46,10 @@ const load_article = async index => {
         copyButton.innerText = "Copy code";
         btn_container.appendChild(copyButton);
 
-        codeBlock.insertBefore(btn_container, codeBlock.firstChild);
+        codeBlock.parentElement.insertBefore(btn_container, codeBlock.parentElement.firstChild);
 
         copyButton.addEventListener("click", () => {
-            const code = codeBlock.textContent;
+            console.log(code);
             try {
                 navigator.clipboard.writeText(code);
                 copyButton.innerText = "Copy success";
