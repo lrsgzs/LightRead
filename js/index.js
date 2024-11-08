@@ -42,7 +42,7 @@ const load_article = async index => {
         btn_container.appendChild(language_tag);
 
         let copyButton = document.createElement("button");
-        copyButton.className = "btn btn-sm btn-secondary";
+        copyButton.className = "btn btn-sm btn-secondary d-print-none";
         copyButton.innerText = "Copy code";
         btn_container.appendChild(copyButton);
 
@@ -68,7 +68,7 @@ const load_article = async index => {
     const prev_btn = document.getElementById("prev-btn");
     const prev_btn_num = document.getElementById("prev-btn-num");
     if (index === 0) {
-        prev_btn.className = "btn btn-light visually-hidden";
+        prev_btn.className = "btn btn-light invisible";
     } else {
         prev_btn.className = "btn btn-light";
         prev_btn_num.innerHTML = articles[index - 1];
@@ -77,7 +77,7 @@ const load_article = async index => {
     const next_btn = document.getElementById("next-btn");
     const next_btn_num = document.getElementById("next-btn-num");
     if (index === articles_count - 1) {
-        next_btn.className = "btn btn-light visually-hidden";
+        next_btn.className = "btn btn-light invisible";
     } else {
         next_btn.className = "btn btn-light";
         next_btn_num.innerHTML = articles[index + 1];
@@ -94,8 +94,8 @@ const switch_theme = theme => {
     document.getElementById("switch-zoom-btn").className =
         nav_buttons_class_name;
 
-    document.getElementById("prev-btn").className = article_index == 0 ? `btn btn-${theme} visually-hidden` : `btn btn-${theme}`;
-    document.getElementById("next-btn").className = article_index >= (articles_count - 1) ? `btn btn-${theme} visually-hidden` : `btn btn-${theme}`;
+    document.getElementById("prev-btn").className = article_index == 0 ? `btn btn-${theme} invisible` : `btn btn-${theme}`;
+    document.getElementById("next-btn").className = article_index >= (articles_count - 1) ? `btn btn-${theme} invisible` : `btn btn-${theme}`;
 };
 
 const dark_listener = window.matchMedia("(prefers-color-scheme: dark)");
