@@ -8,6 +8,7 @@ const purify = DOMPurify(window);
 
 const articles = await article.get_articles();
 const articles_count = articles.length;
+let article_index = Number(localStorage.getItem("article_index")) || 0;
 
 const load_article = async index => {
     const article_content = await article.load_article(index);
@@ -91,11 +92,8 @@ const switch_theme = theme => {
     document.getElementById("switch-zoom-btn").className =
         nav_buttons_class_name;
 
-    const switch_article_buttons_class_name = `btn btn-${theme}`;
-    document.getElementById("prev-btn").className =
-        switch_article_buttons_class_name;
-    document.getElementById("next-btn").className =
-        switch_article_buttons_class_name;
+    document.getElementById("prev-btn").className = article_index == 0 ? `btn btn-${theme} visually-hidden` : `btn btn-${theme}`;
+    document.getElementById("next-btn").className = article_index >= (articles_count - 1) ? `btn btn-${theme} visually-hidden` : `btn btn-${theme}`;
 };
 
 const dark_listener = window.matchMedia("(prefers-color-scheme: dark)");
@@ -116,8 +114,6 @@ setInterval(() => {
     const book_title_container = document.getElementById("book-title");
     book_title_container.innerHTML = info.book_title;
 }
-
-let article_index = Number(localStorage.getItem("article_index")) || 0;
 await load_article(article_index);
 
 window.App = {
