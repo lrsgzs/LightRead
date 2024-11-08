@@ -24,17 +24,17 @@
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li>
                                 <input type="radio" name="theme-option" id="theme-option1" autocomplete="off"
-                                    class="btn-check" onclick="App.switch_theme('auto')" checked></input>
+                                    class="btn-check" onclick="App.switch_theme('auto')" checked>
                                 <label class="btn btn-light dropdown-item" for="theme-option1">Auto</label>
                             </li>
                             <li>
                                 <input type="radio" name="theme-option" id="theme-option2" autocomplete="off"
-                                    class="btn-check" onclick="App.switch_theme('light')"></input>
+                                    class="btn-check" onclick="App.switch_theme('light')">
                                 <label class="btn btn-light dropdown-item" for="theme-option2">Light</label>
                             </li>
                             <li>
                                 <input type="radio" name="theme-option" id="theme-option3" autocomplete="off"
-                                    class="btn-check" onclick="App.switch_theme('dark')"></input>
+                                    class="btn-check" onclick="App.switch_theme('dark')">
                                 <label class="btn btn-light dropdown-item" for="theme-option3">Dark</label>
                             </li>
                         </ul>
@@ -45,27 +45,27 @@
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li>
                                 <input type="radio" name="zoom-option" id="zoom-option1" autocomplete="off"
-                                    class="btn-check" onclick="App.switch_zoom(0.9)"></input>
+                                    class="btn-check" onclick="App.switch_zoom(0.9)">
                                 <label class="btn btn-light dropdown-item" for="zoom-option1">90%</label>
                             </li>
                             <li>
                                 <input type="radio" name="zoom-option" id="zoom-option2" autocomplete="off"
-                                    class="btn-check" onclick="App.switch_zoom(1)" checked></input>
+                                    class="btn-check" onclick="App.switch_zoom(1)" checked>
                                 <label class="btn btn-light dropdown-item" for="zoom-option2">100%</label>
                             </li>
                             <li>
                                 <input type="radio" name="zoom-option" id="zoom-option3" autocomplete="off"
-                                    class="btn-check" onclick="App.switch_zoom(1.1)"></input>
+                                    class="btn-check" onclick="App.switch_zoom(1.1)">
                                 <label class="btn btn-light dropdown-item" for="zoom-option3">110%</label>
                             </li>
                             <li>
                                 <input type="radio" name="zoom-option" id="zoom-option4" autocomplete="off"
-                                    class="btn-check" onclick="App.switch_zoom(1.5)"></input>
+                                    class="btn-check" onclick="App.switch_zoom(1.5)">
                                 <label class="btn btn-light dropdown-item" for="zoom-option4">150%</label>
                             </li>
                             <li>
                                 <input type="radio" name="zoom-option" id="zoom-option5" autocomplete="off"
-                                    class="btn-check" onclick="App.switch_zoom(2)"></input>
+                                    class="btn-check" onclick="App.switch_zoom(2)">
                                 <label class="btn btn-light dropdown-item" for="zoom-option5">200%</label>
                             </li>
                         </ul>
@@ -79,17 +79,15 @@
 
     <nav class="navbar bg-body-tertiary fixed-bottom">
         <div class="container-fluid">
-            <div class="mr-auto">
-                <button class="btn btn-light" id="prev-btn">
-                    ←Prev <div class="font-size-24px display-inline">1</div>
-                </button>
-            </div>
-            <div class="font-size-24px" id="time-container">10:10</div>
-            <div class="ml-auto">
-                <button class="btn btn-light" id="next-btn">
-                    <div class="font-size-24px display-inline">3</div> Next→
-                </button>
-            </div>
+            <button class="mr-auto btn btn-light" id="prev-btn" onclick="App.switch_article(-1)">
+                ←Prev
+                <div class="font-size-24px display-inline" id="prev-btn-num">1</div>
+            </button>
+            <div class="font-size-24px position-absolute top-50 start-50 translate-middle" id="time-container">10:10</div>
+            <button class="ml-auto btn btn-light" id="next-btn" onclick="App.switch_article(1)">
+                <div class="font-size-24px display-inline" id="next-btn-num">3</div>
+                Next→
+            </button>
         </div>
     </nav>
 

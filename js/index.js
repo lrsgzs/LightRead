@@ -19,6 +19,7 @@ const load_article = async index => {
     hljs.highlightAll();
     await MathJax.typesetPromise();
 
+    // Add copy button to code blocks
     const codeBlocks = document.querySelectorAll("code");
     codeBlocks.forEach(codeBlock => {
         if (codeBlock.parentElement.tagName !== "PRE") {
@@ -57,6 +58,25 @@ const load_article = async index => {
             }
         });
     });
+
+    // Change buttons
+    const prev_btn = document.getElementById("prev-btn");
+    const prev_btn_num = document.getElementById("prev-btn-num");
+    if (index === 0) {
+        prev_btn.className = "mr-auto btn btn-light visually-hidden";
+    } else {
+        prev_btn.className = "mr-auto btn btn-light";
+        prev_btn_num.innerHTML = articles[index - 1];
+    }
+
+    const next_btn = document.getElementById("next-btn");
+    const next_btn_num = document.getElementById("next-btn-num");
+    if (index === articles_count - 1) {
+        next_btn.className = "ml-auto btn btn-light visually-hidden";
+    } else {
+        next_btn.className = "ml-auto btn btn-light";
+        next_btn_num.innerHTML = articles[index + 1];
+    }
 };
 
 const switch_theme = theme => {
@@ -94,7 +114,9 @@ setInterval(() => {
     const book_title_container = document.getElementById("book-title");
     book_title_container.innerHTML = info.book_title;
 }
-await load_article(2); // for debugging only
+
+let article_index = Number(localStorage.getItem("article_index")) || 0;
+await load_article(article_index);
 
 window.App = {
     switch_zoom: zoom => {
@@ -121,6 +143,14 @@ window.App = {
     },
     switch_article: page => {
         // page: -1 for prev, 1 for next
-
-    }
+        const index = article_index + page;
+        if (index < 0) {
+            return;
+        } else if (index >= articles_count) {
+            return;
+        }
+        localStorage.setItem("article_index", index.toString());
+        article_index = index;
+        load_article(article_index);
+    },
 };
