@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/css/index.css">
 </head>
 
-<body>
+<body style="overflow-y: scroll;">
     <nav class="navbar bg-body-tertiary sticky-top d-print-none">
         <div class="container-fluid">
             <a class="navbar-brand" id="book-title">LightRead</a>
@@ -79,7 +79,12 @@
         </div>
     </nav>
 
-    <div class="content-container" id="container"></div>
+    <div class="content-container" id="container">
+        <h1>
+            <div class="spinner-border font-size-20px" role="status"></div>
+            &MediumSpace;Loading...
+        </h1>
+    </div>
 
     <nav class="navbar bg-body-tertiary fixed-bottom d-print-none">
         <div class="container-fluid">

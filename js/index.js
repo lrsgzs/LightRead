@@ -116,7 +116,9 @@ setInterval(() => {
     const book_title_container = document.getElementById("book-title");
     book_title_container.innerHTML = info.book_title;
 }
-await load_article(article_index);
+setTimeout(async () => {
+    await load_article(article_index);
+}, 1000);
 
 window.App = {
     switch_zoom: zoom => {
