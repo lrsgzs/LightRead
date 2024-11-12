@@ -71,18 +71,18 @@ const load_article = async index => {
     const prev_btn = document.getElementById("prev-btn");
     const prev_btn_num = document.getElementById("prev-btn-num");
     if (index === 0) {
-        prev_btn.className = "btn btn-light invisible";
+        prev_btn.className = "btn btn-light visually-hidden mr-auto";
     } else {
-        prev_btn.className = "btn btn-light";
+        prev_btn.className = "btn btn-light mr-auto";
         prev_btn_num.innerHTML = articles[index - 1];
     }
 
     const next_btn = document.getElementById("next-btn");
     const next_btn_num = document.getElementById("next-btn-num");
     if (index === articles_count - 1) {
-        next_btn.className = "btn btn-light invisible";
+        next_btn.className = "btn btn-light visually-hidden ml-auto";
     } else {
-        next_btn.className = "btn btn-light";
+        next_btn.className = "btn btn-light ml-auto";
         next_btn_num.innerHTML = articles[index + 1];
     }
 };
@@ -98,11 +98,13 @@ const switch_theme = theme => {
         nav_buttons_class_name;
 
     document.getElementById("prev-btn").className =
-        article_index == 0 ? `btn btn-${theme} invisible` : `btn btn-${theme}`;
+        article_index == 0
+            ? `btn btn-${theme} visually-hidden mr-auto`
+            : `btn btn-${theme} mr-auto`;
     document.getElementById("next-btn").className =
         article_index >= articles_count - 1
-            ? `btn btn-${theme} invisible`
-            : `btn btn-${theme}`;
+            ? `btn btn-${theme} visually-hidden ml-auto`
+            : `btn btn-${theme} ml-auto`;
 };
 
 const dark_listener = window.matchMedia("(prefers-color-scheme: dark)");
