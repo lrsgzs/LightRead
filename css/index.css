@@ -44,12 +44,12 @@ body {
 
 .content-container {
     padding: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 24px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     background-color: var(--content-container-bg-color);
-    min-height: calc(100% - 86px);
+    min-height: calc(100% - 122px);
 }
 
 blockquote {
@@ -119,15 +119,13 @@ code {
     background-color: var(--time-container-bg-color);
 }
 
-:root[data-bs-theme="light"]
-{
+:root[data-bs-theme="light"] {
     --content-container-bg-color: #fafafa;
     --time-container-fg-color: black;
     --time-container-bg-color: #f8f9fa;
 }
 
-:root[data-bs-theme="dark"]
-{
+:root[data-bs-theme="dark"] {
     --content-container-bg-color: #1a1d20;
     --time-container-fg-color: white;
     --time-container-bg-color: #2b3035;
