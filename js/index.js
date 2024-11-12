@@ -1,6 +1,6 @@
 import { marked } from "https://fastly.jsdelivr.net/npm/marked/lib/marked.esm.js";
 import hljs from "https://fastly.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/es/highlight.min.js";
-import { lineNumbersBlock } from "./hightlight-line-number.js";
+import { lineNumbersBlock } from "./highlight-line-number.js";
 import DOMPurify from "https://fastly.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.es.mjs";
 import article from "./articles.js";
 
@@ -30,7 +30,7 @@ const load_article = async index => {
 
         const code = codeBlock.innerText.trim();
         lineNumbersBlock(codeBlock);
-        
+
         let btn_container = document.createElement("div");
         btn_container.className = "code-block-head display-flex";
 
@@ -46,7 +46,10 @@ const load_article = async index => {
         copyButton.innerText = "Copy code";
         btn_container.appendChild(copyButton);
 
-        codeBlock.parentElement.insertBefore(btn_container, codeBlock.parentElement.firstChild);
+        codeBlock.parentElement.insertBefore(
+            btn_container,
+            codeBlock.parentElement.firstChild
+        );
 
         copyButton.addEventListener("click", () => {
             console.log(code);
@@ -94,8 +97,12 @@ const switch_theme = theme => {
     document.getElementById("switch-zoom-btn").className =
         nav_buttons_class_name;
 
-    document.getElementById("prev-btn").className = article_index == 0 ? `btn btn-${theme} invisible` : `btn btn-${theme}`;
-    document.getElementById("next-btn").className = article_index >= (articles_count - 1) ? `btn btn-${theme} invisible` : `btn btn-${theme}`;
+    document.getElementById("prev-btn").className =
+        article_index == 0 ? `btn btn-${theme} invisible` : `btn btn-${theme}`;
+    document.getElementById("next-btn").className =
+        article_index >= articles_count - 1
+            ? `btn btn-${theme} invisible`
+            : `btn btn-${theme}`;
 };
 
 const dark_listener = window.matchMedia("(prefers-color-scheme: dark)");
@@ -116,9 +123,7 @@ setInterval(() => {
     const book_title_container = document.getElementById("book-title");
     book_title_container.innerHTML = info.book_title;
 }
-setTimeout(async () => {
-    await load_article(article_index);
-}, 1000);
+await load_article(article_index);
 
 window.App = {
     switch_zoom: zoom => {
