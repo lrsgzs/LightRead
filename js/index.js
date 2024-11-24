@@ -119,12 +119,10 @@ setInterval(() => {
     time_container.innerHTML = new Date().toLocaleTimeString();
 }, 200);
 
-{
-    const response = await fetch("/info.json");
-    const info = await response.json();
-    const book_title_container = document.getElementById("book-title");
-    book_title_container.innerHTML = info.book_title;
-}
+const response = await fetch("/info.json");
+const info = await response.json();
+const book_title_container = document.getElementById("book-title");
+book_title_container.innerHTML = info.book_title;
 await load_article(article_index);
 
 window.App = {
@@ -162,4 +160,7 @@ window.App = {
         article_index = index;
         load_article(article_index);
     },
+    open_github_repo: () => {
+        window.open(`https://github.com/${info.github}`);
+    }
 };
