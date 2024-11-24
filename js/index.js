@@ -96,6 +96,8 @@ const switch_theme = theme => {
         nav_buttons_class_name;
     document.getElementById("switch-zoom-btn").className =
         nav_buttons_class_name;
+    document.getElementById("open-github-btn").className =
+        nav_buttons_class_name;
 
     document.getElementById("prev-btn").className =
         article_index == 0
@@ -162,5 +164,5 @@ window.App = {
     },
     open_github_repo: () => {
         window.open(`https://github.com/${info.github}`);
-    }
+    },
 };
